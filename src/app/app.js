@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+require("../infra/database/mongo");
 
 class AppController {
   constructor() {
