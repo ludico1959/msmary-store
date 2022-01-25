@@ -1,10 +1,14 @@
 {
-  "extends": ["airbnb-base", "prettier"],
-  "plugins": ["prettier"],
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "sourceType": "module"
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
   },
+  "extends": ["airbnb-base", "eslint-config-prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["eslint-plugin-prettier"],
   "rules": {
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
@@ -15,6 +19,8 @@
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-underscore-dangle": "off",
     "no-useless-escape": "off",
-    "no-restricted-syntax": "off"
+    "no-restricted-syntax": "off",
+    "linebreak-style": ["error", "windows"],
+    "comma-dangle": "off"
   }
 }
