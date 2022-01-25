@@ -20,7 +20,7 @@ class EmployeeRepository {
   }
 
   async updateEmployee(id, payload) {
-    const result = await employeeSchema.findByIdAndUpdate(id, payload);
+    const result = await employeeSchema.findByIdAndUpdate(id, payload, { new: true });
 
     return result;
   }

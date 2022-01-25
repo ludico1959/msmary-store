@@ -29,7 +29,7 @@ class EmployeeControler {
 
   async updateEmployee(req, res) {
     try {
-      const result = await EmployeeService.updateEmployee(req.params.id, req.body);
+      const result = await EmployeeService.updateEmployee(req.params.employee_id, req.body);
 
       return res.status(200).json(serialize(result));
     } catch (error) {
