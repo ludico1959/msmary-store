@@ -8,11 +8,11 @@ const serialize = ({
   birthday,
   situation,
   createdAt,
-  UpdatedAt,
+  updatedAt,
 }) => {
   birthday = DateFormat.formatToRequest(birthday);
 
-  return { _id, name, cpf, office, birthday, situation, createdAt, UpdatedAt };
+  return { _id, name, cpf, office, birthday, situation, createdAt, updatedAt };
 };
 
 const paginateSerialize = ({
