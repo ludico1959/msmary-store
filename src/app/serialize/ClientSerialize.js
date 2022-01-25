@@ -15,12 +15,11 @@ const serialize = ({ _id, name, cpf, office, birthday, situation, createdAt, upd
   };
 };
 
-const paginateSerialize = ({ docs, limit, totalDocs, pageCounter, totalPages }) => ({
+const paginateSerialize = ({ docs, totalDocs, pagingCounter, totalPages }) => ({
   docs: docs.map(serialize),
-  limit,
-  total: totalDocs,
-  offset: pageCounter,
-  offsets: totalPages
+  currentPage: pagingCounter,
+  totalCount: totalDocs,
+  totalPages
 });
 
 module.exports = { serialize, paginateSerialize };

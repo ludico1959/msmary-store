@@ -9,8 +9,25 @@ class EmployeeControler {
       return res.status(201).json(serialize(result));
     } catch (error) {
       return res.status(error.statusCode).json({
-        description: error.description,
-        name: error.name
+        message: error.message,
+        details: {
+          description: error.description
+        }
+      });
+    }
+  }
+
+  async findEmployee(req, res) {
+    try {
+      const result = await EmployeeService.findEmployee(req.query);
+
+      return res.status(200).json(paginateSerialize(result));
+    } catch (error) {
+      return res.status(error.statusCode).json({
+        message: error.description,
+        details: {
+          description: error.description
+        }
       });
     }
   }

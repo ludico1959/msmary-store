@@ -6,6 +6,12 @@ class EmployeeRepository {
 
     return result;
   }
+
+  async findEmployee(payload) {
+    const result = await employeeSchema.find(payload);
+
+    return result;
+  }
 }
 
 module.exports = new EmployeeRepository();

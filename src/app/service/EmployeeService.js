@@ -9,6 +9,12 @@ class EmployeeService {
 
     return result;
   }
+
+  async findEmployee(payload) {
+    const result = await EmployeeRepository.findEmployee(payload);
+
+    return result;
+  }
 }
 
 module.exports = new EmployeeService();

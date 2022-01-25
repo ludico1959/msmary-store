@@ -3,8 +3,8 @@ class InvalidCpf extends Error {
     super();
     this.statusCode = 400;
     this.description = 'Bad Request';
-    this.message = `Invalid CPF ${cpf}`;
+    this.message = `Invalid CPF: ${cpf}`;
   }
 }
 
-module.exports = new InvalidCpf();
+module.exports = InvalidCpf;

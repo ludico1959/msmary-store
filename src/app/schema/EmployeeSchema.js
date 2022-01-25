@@ -6,7 +6,7 @@ const employeeSchema = new mongoose.Schema({
   _id: {
     type: String,
     required: true,
-    default: randomUUID()
+    default: randomUUID
   },
 
   name: {
