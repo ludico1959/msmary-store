@@ -1,9 +1,12 @@
-const cpfValidator = require('../../validation/client/cpfValidator');
+const validateCPF = require('../validation/client/validateCPF');
 const EmployeeRepository = require('../repository/EmployeeRepository');
+const InvalidCPF = require('../errors/client/invalidCPF');
 
 class EmployeeService {
   async createEmployee(payload) {
-    cpfValidator.testCpf(payload.cpf);
+    const isCPFincorrect = await validateCPF.testCPF(payload.cpf);
+
+    if (isCPFincorrect) throw new InvalidCPF(isCPFincorrect);
 
     const result = await EmployeeRepository.createEmployee(payload);
 

@@ -1,10 +1,10 @@
-class InvalidCpf extends Error {
-  constructor(cpf) {
+class InvalidCPF extends Error {
+  constructor(errorMessage) {
     super();
     this.statusCode = 400;
     this.description = 'Bad Request';
-    this.message = `Invalid CPF: ${cpf}`;
+    this.message = errorMessage;
   }
 }
 
-module.exports = InvalidCpf;
+module.exports = InvalidCPF;
