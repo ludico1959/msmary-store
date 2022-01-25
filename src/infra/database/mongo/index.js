@@ -6,7 +6,12 @@ class Database {
   }
 
   connect() {
-    mongoose.connect(process.env.DATABASE_URL, {
+    const remoteDB = process.env.DATABASE_URL.replace(
+      "<PASSWORD>",
+      process.env.DATABASE_PASSWORD
+    );
+
+    mongoose.connect(remoteDB, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
