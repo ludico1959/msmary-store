@@ -15,6 +15,12 @@ class EmployeeService {
 
     return result;
   }
+
+  async updateEmployee(id, payload) {
+    const result = await EmployeeRepository.findEmployee(id, payload);
+
+    return result;
+  }
 }
 
 module.exports = new EmployeeService();

@@ -23,12 +23,17 @@ class EmployeeControler {
 
       return res.status(200).json(paginateSerialize(result));
     } catch (error) {
-      return res.status(error.statusCode).json({
-        message: error.description,
-        details: {
-          description: error.description
-        }
-      });
+      return res.status(400).json(error);
+    }
+  }
+
+  async updateEmployee(req, res) {
+    try {
+      const result = await EmployeeService.updateEmployee(req.params.id, req.body);
+
+      return res.status(200).json(serialize(result));
+    } catch (error) {
+      return res.status(400).json(error);
     }
   }
 }

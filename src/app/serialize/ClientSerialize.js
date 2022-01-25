@@ -4,7 +4,7 @@ const serialize = ({ _id, name, cpf, office, birthday, situation, createdAt, upd
   const formatedBirthday = DateFormat.formatToRequest(birthday);
 
   return {
-    _id,
+    employee_id: _id,
     name,
     cpf,
     office,
@@ -18,6 +18,7 @@ const serialize = ({ _id, name, cpf, office, birthday, situation, createdAt, upd
 const paginateSerialize = ({ docs, totalDocs, pagingCounter, totalPages }) => ({
   docs: docs.map(serialize),
   currentPage: pagingCounter,
+  pageSize: docs.length,
   totalCount: totalDocs,
   totalPages
 });
