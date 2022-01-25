@@ -1,6 +1,6 @@
 const moment = require('moment');
 
-class DateFormat {
+class FormatDate {
   formatToRequest(date) {
     return moment(date, 'YYYY-MM-DD').utc().format('DD/MM/YYYY');
   }
@@ -10,4 +10,4 @@ class DateFormat {
   }
 }
 
-module.exports = new DateFormat();
+module.exports = new FormatDate();

@@ -36,6 +36,16 @@ class EmployeeControler {
       return res.status(400).json(error);
     }
   }
+
+  async deleteEmployee(req, res) {
+    try {
+      await EmployeeService.deleteEmployee(req.params.employee_id);
+
+      return res.status(204).end();
+    } catch (error) {
+      return res.status(400).json(error);
+    }
+  }
 }
 
 module.exports = new EmployeeControler();

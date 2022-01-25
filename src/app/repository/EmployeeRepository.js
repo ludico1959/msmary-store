@@ -24,6 +24,12 @@ class EmployeeRepository {
 
     return result;
   }
+
+  async deleteEmployee(id) {
+    await employeeSchema.findByIdAndDelete(id);
+
+    return null;
+  }
 }
 
 module.exports = new EmployeeRepository();

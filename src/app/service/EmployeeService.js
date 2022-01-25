@@ -21,6 +21,12 @@ class EmployeeService {
 
     return result;
   }
+
+  async deleteEmployee(id) {
+    await EmployeeRepository.deleteEmployee(id);
+
+    return null;
+  }
 }
 
 module.exports = new EmployeeService();
