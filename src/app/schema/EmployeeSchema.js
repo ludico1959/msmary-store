@@ -3,9 +3,8 @@ const mongoosePaginate = require("mongoose-paginate-v2");
 const { randomUUID } = require("crypto");
 
 const employeeSchema = new mongoose.Schema({
-  employee_id: {
+  _id: {
     type: String,
-    unique: true,
     required: true,
     default: randomUUID(),
   },
@@ -35,6 +34,7 @@ const employeeSchema = new mongoose.Schema({
   situation: {
     type: String,
     required: true,
+    default: "active",
   },
 
   createdAt: {

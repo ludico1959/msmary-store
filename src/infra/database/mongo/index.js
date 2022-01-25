@@ -14,6 +14,7 @@ class Database {
     mongoose.connect(remoteDB, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      autoIndex: false,
     });
   }
 }

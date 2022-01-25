@@ -5,9 +5,9 @@ class EmployeeControler {
     try {
       const result = await EmployeeService.createEmployee(req.body);
 
-      res.status(201).json(result);
+      return res.status(201).json(result);
     } catch (error) {
-      res.status(400).json({ message: error.message });
+      return res.status(400).json(error.message);
     }
   }
 }

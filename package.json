@@ -1,10 +1,10 @@
 {
   "name": "msmary-store",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "src/app/server.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/app/server.js"
   },
   "dependencies": {
     "dotenv": "^14.2.0",
