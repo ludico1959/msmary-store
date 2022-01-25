@@ -1,6 +1,6 @@
-const express = require("express");
-const router = require("../routes");
-require("../infra/database/mongo");
+const express = require('express');
+const router = require('../routes');
+require('../infra/database/mongo');
 
 class AppController {
   constructor() {

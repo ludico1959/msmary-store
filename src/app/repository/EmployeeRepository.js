@@ -1,4 +1,4 @@
-const employeeSchema = require("../schema/EmployeeSchema");
+const employeeSchema = require('../schema/EmployeeSchema');
 
 class EmployeeRepository {
   async createEmployee(payload) {

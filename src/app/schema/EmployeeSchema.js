@@ -1,57 +1,57 @@
-const mongoose = require("mongoose");
-const mongoosePaginate = require("mongoose-paginate-v2");
-const { randomUUID } = require("crypto");
+const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate-v2');
+const { randomUUID } = require('crypto');
 
 const employeeSchema = new mongoose.Schema({
   _id: {
     type: String,
     required: true,
-    default: randomUUID(),
+    default: randomUUID()
   },
 
   name: {
     type: String,
-    required: true,
+    required: true
   },
 
   cpf: {
     type: String,
     unique: true,
-    required: true,
+    required: true
   },
 
   office: {
     type: String,
     require: true,
-    enum: ["gerente", "vendedor", "caixa"],
+    enum: ['gerente', 'vendedor', 'caixa']
   },
 
   birthday: {
     type: Date,
-    required: true,
+    required: true
   },
 
   situation: {
     type: String,
     required: true,
-    default: "active",
+    default: 'active'
   },
 
   createdAt: {
     type: Date,
     required: true,
-    default: Date.now(),
+    default: Date.now()
   },
 
   updatedAt: {
     type: Date,
     required: true,
-    default: Date.now(),
-  },
+    default: Date.now()
+  }
 });
 
 employeeSchema.plugin(mongoosePaginate);
 
-const Employee = mongoose.model("Employee", employeeSchema);
+const Employee = mongoose.model('Employee', employeeSchema);
 
 module.exports = Employee;

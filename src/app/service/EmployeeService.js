@@ -1,4 +1,4 @@
-const EmployeeRepository = require("../repository/EmployeeRepository");
+const EmployeeRepository = require('../repository/EmployeeRepository');
 
 class EmployeeService {
   async createEmployee(payload) {

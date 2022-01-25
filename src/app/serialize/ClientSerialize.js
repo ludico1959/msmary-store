@@ -1,27 +1,12 @@
-const DateFormat = require("../utils/DateFormat");
+const DateFormat = require('../utils/DateFormat');
 
-const serialize = ({
-  _id,
-  name,
-  cpf,
-  office,
-  birthday,
-  situation,
-  createdAt,
-  updatedAt,
-}) => {
+const serialize = ({ _id, name, cpf, office, birthday, situation, createdAt, updatedAt }) => {
   birthday = DateFormat.formatToRequest(birthday);
 
   return { _id, name, cpf, office, birthday, situation, createdAt, updatedAt };
 };
 
-const paginateSerialize = ({
-  docs,
-  limit,
-  totalDocs,
-  pageCounter,
-  totalPages,
-}) => {
+const paginateSerialize = ({ docs, limit, totalDocs, pageCounter, totalPages }) => {
   list: docs.map(serialize);
   limit;
   total: totalDocs;
