@@ -8,7 +8,10 @@ class EmployeeControler {
 
       return res.status(201).json(serialize(result));
     } catch (error) {
-      return res.status(400).json(error.message);
+      return res.status(error.statusCode).json({
+        description: error.description,
+        name: error.name
+      });
     }
   }
 }
