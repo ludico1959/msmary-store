@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
     const { error } = params.validate(req.params, { abortEarly: false });
     if (error) throw new BadRequest(error.message);
 
-    return next;
+    return next();
   } catch (error) {
     return res.status(error.statusCode).json({
       message: error.message,
