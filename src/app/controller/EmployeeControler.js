@@ -1,5 +1,5 @@
 const EmployeeService = require('../service/EmployeeService');
-const { serialize, paginateSerialize } = require('../serialize/ClientSerialize');
+const { serialize, paginateSerialize } = require('../serialize/EmployeeSerialize');
 
 class EmployeeControler {
   async createEmployee(req, res) {

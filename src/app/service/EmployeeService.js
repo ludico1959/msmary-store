@@ -1,6 +1,6 @@
-const validateCPF = require('../validation/client/validateCPF');
+const validateCPF = require('../validation/employee/validateCPF');
 const EmployeeRepository = require('../repository/EmployeeRepository');
-const InvalidCPF = require('../errors/client/invalidCPF');
+const InvalidCPF = require('../errors/employee/invalidCPF');
 
 class EmployeeService {
   async createEmployee(payload) {
