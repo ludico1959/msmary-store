@@ -1,6 +1,7 @@
 const validateCPF = require('../validation/employee/validateCPF');
 const EmployeeRepository = require('../repository/EmployeeRepository');
 const BadRequest = require('../errors/badRequest');
+const NotFound = require('../errors/notFound');
 
 class EmployeeService {
   async createEmployee(payload) {
@@ -24,7 +25,7 @@ class EmployeeService {
   async updateEmployee(id, payload) {
     const isThereEmployeeID = await EmployeeRepository.findEmployee({ _id: id });
 
-    if (!isThereEmployeeID) throw new BadRequest('ID not found');
+    if (!isThereEmployeeID) throw new NotFound('ID not found');
 
     const result = await EmployeeRepository.updateEmployee(id, payload);
 
@@ -34,7 +35,7 @@ class EmployeeService {
   async deleteEmployee(id) {
     const isThereEmployeeID = await EmployeeRepository.findEmployee({ _id: id });
 
-    if (!isThereEmployeeID) throw new BadRequest('ID not found');
+    if (!isThereEmployeeID) throw new NotFound('ID not found');
 
     await EmployeeRepository.deleteEmployee(id);
 
