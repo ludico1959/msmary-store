@@ -6,7 +6,7 @@ class FormatDate {
   }
 
   formatToDatabase(date) {
-    return moment(date, 'YYYY/MM/DD').utc().format('YYYY-MM-DD');
+    return moment(date, 'DD/MM/YYYY').utc().format('YYYY-MM-DD');
   }
 }
 

@@ -1,5 +1,6 @@
-const validateCPF = require('../validation/employee/validateCPF');
 const EmployeeRepository = require('../repository/EmployeeRepository');
+const FormatDate = require('../utils/FormatDate');
+const validateCPF = require('../validation/employee/validateCPF');
 const BadRequest = require('../errors/badRequest');
 const NotFound = require('../errors/notFound');
 
@@ -9,7 +10,11 @@ class EmployeeService {
 
     if (isCPFincorrect) throw new BadRequest(isCPFincorrect);
 
-    const result = await EmployeeRepository.createEmployee(payload);
+    const payloadWithDateFormated = payload;
+
+    payloadWithDateFormated.birthday = FormatDate.formatToDatabase(payload.birthday);
+
+    const result = await EmployeeRepository.createEmployee(payloadWithDateFormated);
 
     return result;
   }
