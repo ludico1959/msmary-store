@@ -10,11 +10,11 @@ class EmployeeService {
 
     if (isCPFincorrect) throw new BadRequest(isCPFincorrect);
 
-    const payloadWithDateFormated = payload;
+    const payloadFormated = payload;
 
-    payloadWithDateFormated.birthday = FormatDate.formatToDatabase(payload.birthday);
+    payloadFormated.birthday = FormatDate.formatToDatabase(payload.birthday);
 
-    const result = await EmployeeRepository.createEmployee(payloadWithDateFormated);
+    const result = await EmployeeRepository.createEmployee(payloadFormated);
 
     return result;
   }
@@ -32,7 +32,11 @@ class EmployeeService {
 
     if (!isThereEmployeeID) throw new NotFound('ID not found');
 
-    const result = await EmployeeRepository.updateEmployee(id, payload);
+    const payloadWithUpdateDate = payload;
+
+    payloadWithUpdateDate.updatedAt = Date.now();
+
+    const result = await EmployeeRepository.updateEmployee(id, payloadWithUpdateDate);
 
     return result;
   }
