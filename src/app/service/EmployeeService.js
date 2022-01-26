@@ -17,7 +17,7 @@ class EmployeeService {
   async findEmployee(payload) {
     const result = await EmployeeRepository.findEmployee(payload);
 
-    if (result.docs.length === 0) throw new BadRequest('Results not found');
+    if (result.docs.length === 0) throw new NotFound('Results not found');
 
     return result;
   }

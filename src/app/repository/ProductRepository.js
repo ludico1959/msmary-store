@@ -1,13 +1,13 @@
 const productSchema = require('../schema/productSchema');
 
-class EmployeeRepository {
-  async createEmployee(payload) {
+class ProductRepository {
+  async createProduct(payload) {
     const result = await productSchema.create(payload);
 
     return result;
   }
 
-  async findEmployee(payload) {
+  async findProduct(payload) {
     const { page = 1, limit = 20, ...query } = payload;
 
     const search = payload.name ? { name: { $regex: query.name, $options: 'i' } } : { ...query };
@@ -20,4 +20,4 @@ class EmployeeRepository {
   }
 }
 
-module.exports = new EmployeeRepository();
+module.exports = new ProductRepository();
