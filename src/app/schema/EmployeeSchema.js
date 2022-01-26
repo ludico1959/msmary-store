@@ -44,7 +44,9 @@ const employeeSchema = new mongoose.Schema({
   },
 
   updatedAt: {
-    type: Date
+    type: Date,
+    required: true,
+    default: Date.now()
   }
 });
 
