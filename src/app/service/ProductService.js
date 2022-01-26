@@ -1,12 +1,13 @@
 const ProductRepository = require('../repository/ProductRepository');
+const validateEmployee = require('../validation/product/validateEmployee');
 const BadRequest = require('../errors/badRequest');
 const NotFound = require('../errors/notFound');
 
 class ProductService {
   async createProduct(payload) {
-    // const isEmployeeIDvalid = await validateEmployeeID.testID(payload.cpf);
+    const isEmployeevalid = await validateEmployee.testID(payload.cpf);
 
-    // if (isEmployeeIDvalid) throw new BadRequest(isEmployeeIDvalid);
+    if (isEmployeevalid) throw new BadRequest(isEmployeevalid);
 
     const result = await ProductRepository.createProduct(payload);
 
