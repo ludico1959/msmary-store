@@ -23,7 +23,12 @@ class EmployeeControler {
 
       return res.status(200).json(paginateSerialize(result));
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(error.statusCode).json({
+        message: error.message,
+        details: {
+          description: error.description
+        }
+      });
     }
   }
 
@@ -33,7 +38,12 @@ class EmployeeControler {
 
       return res.status(200).json(serialize(result));
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(error.statusCode).json({
+        message: error.message,
+        details: {
+          description: error.description
+        }
+      });
     }
   }
 
@@ -43,7 +53,12 @@ class EmployeeControler {
 
       return res.status(204).end();
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(error.statusCode).json({
+        message: error.message,
+        details: {
+          description: error.description
+        }
+      });
     }
   }
 }

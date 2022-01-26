@@ -1,12 +1,12 @@
 const validateCPF = require('../validation/employee/validateCPF');
 const EmployeeRepository = require('../repository/EmployeeRepository');
-const InvalidCPF = require('../errors/employee/invalidCPF');
+const BadRequest = require('../errors/badRequest');
 
 class EmployeeService {
   async createEmployee(payload) {
     const isCPFincorrect = await validateCPF.testCPF(payload.cpf);
 
-    if (isCPFincorrect) throw new InvalidCPF(isCPFincorrect);
+    if (isCPFincorrect) throw new BadRequest(isCPFincorrect);
 
     const result = await EmployeeRepository.createEmployee(payload);
 
@@ -16,16 +16,26 @@ class EmployeeService {
   async findEmployee(payload) {
     const result = await EmployeeRepository.findEmployee(payload);
 
+    if (result.docs.length === 0) throw new BadRequest('Results not found');
+
     return result;
   }
 
   async updateEmployee(id, payload) {
+    const isThereEmployeeID = await EmployeeRepository.findEmployee({ _id: id });
+
+    if (!isThereEmployeeID) throw new BadRequest('ID not found');
+
     const result = await EmployeeRepository.updateEmployee(id, payload);
 
     return result;
   }
 
   async deleteEmployee(id) {
+    const isThereEmployeeID = await EmployeeRepository.findEmployee({ _id: id });
+
+    if (!isThereEmployeeID) throw new BadRequest('ID not found');
+
     await EmployeeRepository.deleteEmployee(id);
 
     return null;
