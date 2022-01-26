@@ -1,9 +1,9 @@
-const serialize = ({ employee_id, category, name, min_price, max_price }) => ({
-  employee_id,
-  category,
+const serialize = ({ _id, category, name, price, employee_id }) => ({
+  product_id: _id,
   name,
-  min_price,
-  max_price
+  category,
+  price,
+  employee_id
 });
 
 const paginateSerialize = ({ docs, totalDocs, pagingCounter, totalPages }) => ({

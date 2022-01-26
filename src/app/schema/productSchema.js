@@ -24,27 +24,9 @@ const productSchema = new mongoose.Schema({
     required: true
   },
 
-  min_price: {
+  price: {
     type: Number,
-    require: true,
-    default: 0
-  },
-
-  max_price: {
-    type: Number,
-    require: true,
-    default: 0
-  },
-
-  birthday: {
-    type: Date,
-    required: true
-  },
-
-  situation: {
-    type: String,
-    required: true,
-    default: 'activate'
+    require: true
   },
 
   createdAt: {
