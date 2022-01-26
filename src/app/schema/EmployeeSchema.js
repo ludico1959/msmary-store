@@ -34,7 +34,7 @@ const employeeSchema = new mongoose.Schema({
   situation: {
     type: String,
     required: true,
-    default: 'active'
+    default: 'activate'
   },
 
   createdAt: {

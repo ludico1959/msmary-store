@@ -1,5 +1,5 @@
 const Joi = require('joi').extend(require('@joi/date'));
-const errorSerialize = require('../../serialize/ErrorSerialize');
+const BadRequest = require('../../errors/badRequest');
 
 module.exports = async (req, res, next) => {
   try {
@@ -15,10 +15,15 @@ module.exports = async (req, res, next) => {
 
     const { error } = await schema.validate(req.body, { abortEarly: false });
 
-    if (error) throw error;
+    if (error) throw new BadRequest(error.message);
 
     return next;
   } catch (error) {
-    return res.status(400).json(errorSerialize(error));
+    return res.status(error.statusCode).json({
+      message: error.message,
+      details: {
+        description: error.description
+      }
+    });
   }
 };
