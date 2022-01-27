@@ -36,7 +36,7 @@ Before installing the dependencies from the project, you need to have already in
 
 ### 3️⃣ Setting the environment variables
 
-For using and accessing the MongoDB Atlas Database, you must set the environment variables, then rename the file to **.env**.
+For using and accessing the MongoDB Atlas Database, you must set the environment variables in the file **.env.example**, then rename it the file to **.env**.
 You will see that there's a variable called DATABASE_URL where you will paste the link to your remote database.
 It's important to change the placeholder <password> to <PASSWORD> in the link. Also, don't forget to add your database name.
 As, as you can imagine, there's a DATABASE_PASSWORD environment variable where you will place the user's database password.
