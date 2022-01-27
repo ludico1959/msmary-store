@@ -30,7 +30,7 @@ class EmployeeService {
   async updateEmployee(id, payload) {
     const isThereEmployeeID = await EmployeeRepository.findEmployee({ _id: id });
 
-    if (!isThereEmployeeID) throw new NotFound('ID not found');
+    if (isThereEmployeeID.docs.length === 0) throw new NotFound(`ID not found`);
 
     const payloadWithUpdateDate = payload;
 
@@ -44,7 +44,7 @@ class EmployeeService {
   async deleteEmployee(id) {
     const isThereEmployeeID = await EmployeeRepository.findEmployee({ _id: id });
 
-    if (!isThereEmployeeID) throw new NotFound('ID not found');
+    if (isThereEmployeeID.docs.length === 0) throw new NotFound('ID not found');
 
     await EmployeeRepository.deleteEmployee(id);
 
