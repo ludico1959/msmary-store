@@ -9,27 +9,28 @@
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand"
   },
   "dependencies": {
-    "@joi/date": "^2.1.0",
-    "dotenv": "^14.2.0",
-    "express": "^4.17.2",
-    "joi": "^17.5.0",
-    "moment": "^2.29.1",
-    "mongoose": "^6.1.7",
-    "mongoose-paginate-v2": "^1.5.0",
-    "supertest": "^6.2.2"
+    "@joi/date": "2.1.0",
+    "dotenv": "14.2.0",
+    "express": "4.17.2",
+    "joi": "17.5.0",
+    "moment": "2.29.1",
+    "mongoose": "6.1.7",
+    "mongoose-paginate-v2": "1.5.0",
+    "supertest": "6.2.2",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-plugin": "^1.0.11",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-react": "^7.28.0",
-    "jest": "^27.4.7",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "cross-env": "7.0.3",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-plugin": "1.0.11",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-react": "7.28.0",
+    "jest": "27.4.7",
+    "nodemon": "2.0.15",
+    "prettier": "2.5.1"
   }
 }
