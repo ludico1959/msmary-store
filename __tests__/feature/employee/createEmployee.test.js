@@ -87,7 +87,7 @@ describe('create employee', () => {
     const mockEmployee02 = {
       name: 'Zlatan Ibrahimović',
       cpf: '26421419003',
-      office: 'caixa',
+      office: 'gerente',
       birthday: '03/10/1981'
     };
 
@@ -100,23 +100,6 @@ describe('create employee', () => {
     expect(response.statusCode).toEqual(400);
     expect(body.message).toBe('Bad Request');
     expect(body.details.description).toBe('Duplicated CPF');
-  });
-
-  it('should returns status code 400 because "faxineiro" is not a valid office option', async () => {
-    const mockEmployee01 = {
-      name: 'Ronaldo Nazário',
-      cpf: '12345678908',
-      office: 'faxineiro',
-      birthday: '22/09/1976'
-    };
-
-    const response = await request(app).post('/api/v1/employees').send(mockEmployee01);
-
-    const { body } = response;
-
-    expect(response.statusCode).toEqual(400);
-    expect(body.message).toBe('Bad Request');
-    expect(body.details.description).toBeDefined();
   });
 
   it('should returns status code 400 because "faxineiro" is not a valid office option', async () => {

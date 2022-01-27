@@ -5,6 +5,7 @@ class ValidateEmployee {
     const getEmployee = await EmployeeSchema.find({ _id: employee_id });
     if (!getEmployee) return 'Employee ID not found';
 
+    if (getEmployee.office !== 'gerente') return 'Employee is not a manager';
     if (getEmployee.situation === 'deactivate') return 'Employee is not activate';
 
     return null;
