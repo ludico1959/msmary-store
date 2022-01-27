@@ -8,7 +8,7 @@ class ProductRepository {
   }
 
   async findProduct(payload) {
-    const { page = 1, limit = 20, min_price = 0, max_price = Infinity, name } = payload;
+    const { page = 1, limit = 100, min_price = 0, max_price = Infinity, name } = payload;
 
     const search = {
       price: { $gte: min_price, $lte: max_price }

@@ -8,7 +8,7 @@ class EmployeeRepository {
   }
 
   async findEmployee(payload) {
-    const { page = 1, limit = 20, ...query } = payload;
+    const { page = 1, limit = 100, ...query } = payload;
 
     const search = payload.name ? { name: { $regex: query.name, $options: 'i' } } : { ...query };
 
