@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon src/app/server.js",
     "prod": "cross-env NODE_ENV=prod node src/app/server.js",
-    "test": "cross-env NODE_ENV=test jest --runInBand"
+    "test": "cross-env NODE_ENV=test jest --coverage --runInBand"
   },
   "dependencies": {
     "@joi/date": "^2.1.0",
@@ -15,7 +15,8 @@
     "joi": "^17.5.0",
     "moment": "^2.29.1",
     "mongoose": "^6.1.7",
-    "mongoose-paginate-v2": "^1.5.0"
+    "mongoose-paginate-v2": "^1.5.0",
+    "supertest": "^6.2.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -29,7 +30,6 @@
     "eslint-plugin-react": "^7.28.0",
     "jest": "^27.4.7",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1",
-    "supertest": "^6.2.2"
+    "prettier": "^2.5.1"
   }
 }

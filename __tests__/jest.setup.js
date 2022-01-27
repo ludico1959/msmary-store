@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const connection = require('../src/infra/database/mongo');
-
-global.beforeAll(async () => connection);
+require('../src/infra/database/mongo');
 
 global.afterEach(async () => {
   await Promise.all(
@@ -10,5 +8,3 @@ global.afterEach(async () => {
     })
   );
 });
-
-global.afterAll(async () => connection.disconnect());
