@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Zinedine Zidane\",\r\n    \"cpf\": \"38753579062\",\r\n    \"office\": \"faxineiro\",\r\n    \"birthday\": \"19/01/1979\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Zinedine Zidane\",\r\n    \"cpf\": \"38753579062\",\r\n    \"office\": \"gerente\",\r\n    \"birthday\": \"19/01/1979\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/v1/employees?name=Ronaldo",
+							"raw": "localhost:3000/api/v1/employees",
 							"host": [
 								"localhost"
 							],
@@ -56,7 +56,13 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Ronaldo"
+									"value": "Ronaldo",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
 								}
 							]
 						}
@@ -70,7 +76,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"situation\": \"deactivate\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Ronaldo Nazário\",\r\n    \"office\": \"caixa\",\r\n    \"situation\": \"deactivate\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -78,7 +84,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/v1/employees/20eb7733-579b-4217-8ece-ea9c4c61d5f7",
+							"raw": "localhost:3000/api/v1/employees/",
 							"host": [
 								"localhost"
 							],
@@ -87,7 +93,7 @@
 								"api",
 								"v1",
 								"employees",
-								"20eb7733-579b-4217-8ece-ea9c4c61d5f7"
+								""
 							]
 						}
 					},
@@ -99,7 +105,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/v1/employees/6cf2cc64-9805-4387-ba16-696a1c64235c",
+							"raw": "localhost:3000/api/v1/employees/",
 							"host": [
 								"localhost"
 							],
@@ -108,7 +114,7 @@
 								"api",
 								"v1",
 								"employees",
-								"6cf2cc64-9805-4387-ba16-696a1c64235c"
+								""
 							]
 						}
 					},
@@ -126,7 +132,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"name\": \"notebook dell\",\r\n\"category\": \"eletronico\",\r\n\"price\": \"12.32\",\r\n\"employee_id\": \"a99e8bf7-fa32-4ae7-8b53-5e00b9d43621\"\r\n}",
+							"raw": "{\r\n\"name\": \"notebook dell\",\r\n\"category\": \"eletronico\",\r\n\"price\": \"2.90\",\r\n\"employee_id\": \"e13b7bab-5245-4382-83fd-a6f52be5fd4e\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
