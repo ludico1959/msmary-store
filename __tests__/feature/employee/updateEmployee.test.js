@@ -63,4 +63,58 @@ describe('update employee', () => {
     expect(body.message).toBe('Not Found');
     expect(body.details.description).toBe('ID not found');
   });
+
+  it('should returns status code 400 because "repositor" is not a valid office option', async () => {
+    const mockEmployee01 = {
+      name: 'Ronaldo Nazário',
+      cpf: '88661202000',
+      office: 'caixa',
+      birthday: '22/09/1976'
+    };
+
+    const mockUpdates = {
+      name: 'Ronaldo de Assis Moreira',
+      office: 'repositor',
+      situation: 'deactivate'
+    };
+
+    let response = await request(app).post('/api/v1/employees').send(mockEmployee01);
+
+    const { employee_id } = response.body;
+
+    response = await request(app).put(`/api/v1/employees/${employee_id}`).send(mockUpdates);
+
+    const { body } = response;
+
+    expect(response.statusCode).toEqual(400);
+    expect(body.message).toBe('Bad Request');
+    expect(body.details.description).toBeDefined();
+  });
+
+  it('should returns status code 400 because ID format is not an UUID', async () => {
+    const mockEmployee01 = {
+      name: 'Ronaldo Nazário',
+      cpf: '88661202000',
+      office: 'caixa',
+      birthday: '22/09/1976'
+    };
+
+    const mockUpdates = {
+      name: 'Ronaldo de Assis Moreira',
+      office: 'repositor',
+      situation: 'deactivate'
+    };
+
+    await request(app).post('/api/v1/employees').send(mockEmployee01);
+
+    const employee_id = '123';
+
+    const response = await request(app).put(`/api/v1/employees/${employee_id}`).send(mockUpdates);
+
+    const { body } = response;
+
+    expect(response.statusCode).toEqual(400);
+    expect(body.message).toBe('Bad Request');
+    expect(body.details.description).toBeDefined();
+  });
 });
