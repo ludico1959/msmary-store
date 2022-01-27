@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
       birthday: Joi.date().format('DD/MM/YYYY').required().less(Date.now())
     });
 
-    const { error } = await schema.validate(req.body, { abortEarly: false });
+    const { error } = schema.validate(req.body, { abortEarly: false });
 
     if (error) throw new BadRequest(error.message);
 
