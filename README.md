@@ -63,6 +63,7 @@ node src/app/server.js
 ```
 And that's it, folks! Congratulations, your app is running locally.
 
+
 ##  📬 Using the application 
 
 I will put here two options for using this API: 
@@ -83,8 +84,3 @@ For using it, just import the **postman_collection.json** from inside the test f
 
 * **Postman**: [download here](https://www.postman.com/downloads/).
 * **Insomnia**: [download here](https://insomnia.rest/download).
-
-
-## 📡 Run remotely
-
-To be updated...
