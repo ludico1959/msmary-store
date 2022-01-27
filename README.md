@@ -31,7 +31,7 @@ To get started, you simply need to clone the project repository on your machine 
 Before installing the dependencies from the project, you need to have already installed on your machine:
 
 * **Node.Js**: If you don't have it, just download [here](https://nodejs.org/en/download/).
-* **MongoDB Atlas Dabase**: If you don't have it, just acess it [here](https://www.mongodb.com/pt-br/atlas/database-pt-1).*
+* **MongoDB Atlas Dabase**: If you don't know it, just acess it [here](https://www.mongodb.com/pt-br/atlas/database-pt-1).
 
 
 ### 3️⃣ Setting the environment variables
