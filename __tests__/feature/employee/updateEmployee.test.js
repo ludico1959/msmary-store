@@ -1,8 +1,6 @@
 const request = require('supertest');
 const app = require('../../../src/app/app');
 
-jest.useFakeTimers('legacy');
-
 describe('update employee', () => {
   it('should returns status code 200 and update an employee successfuly', async () => {
     const mockEmployee01 = {
