@@ -5,7 +5,7 @@ const NotFound = require('../errors/notFound');
 
 class ProductService {
   async createProduct(payload) {
-    const isEmployeevalid = await validateEmployee.testID(payload.cpf);
+    const isEmployeevalid = await validateEmployee.checkEmployee(payload.employee_id);
 
     if (isEmployeevalid) throw new BadRequest(isEmployeevalid);
 

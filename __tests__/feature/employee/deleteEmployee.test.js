@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../../src/app/app');
 
-describe('update employee', () => {
+describe('delete employee', () => {
   it('should returns status code 204 and update an employee successfuly', async () => {
     const mockEmployee01 = {
       name: 'Ronaldo Nazário',
