@@ -1,5 +1,6 @@
 const Joi = require('joi').extend(require('@joi/date'));
 const BadRequest = require('../../errors/badRequest');
+const { employeeOfficeOptions } = require('../../utils/Enums');
 
 module.exports = async (req, res, next) => {
   try {
@@ -8,7 +9,9 @@ module.exports = async (req, res, next) => {
 
       cpf: Joi.string().length(11).required(),
 
-      office: Joi.string().required().valid('gerente', 'vendedor', 'caixa'),
+      office: Joi.string()
+        .required()
+        .valid(...employeeOfficeOptions),
 
       birthday: Joi.date().format('DD/MM/YYYY').required().less(Date.now())
     });

@@ -1,14 +1,15 @@
 const Joi = require('joi');
 const BadRequest = require('../../errors/badRequest');
+const { employeeOfficeOptions, employeeSituationOptions } = require('../../utils/Enums');
 
 module.exports = async (req, res, next) => {
   try {
     const schema = Joi.object({
       name: Joi.string().trim(),
 
-      office: Joi.string().valid('gerente', 'vendedor', 'caixa'),
+      office: Joi.string().valid(...employeeOfficeOptions),
 
-      situation: Joi.string().valid('activate', 'deactivate')
+      situation: Joi.string().valid(...employeeSituationOptions)
     });
 
     const params = Joi.object({
