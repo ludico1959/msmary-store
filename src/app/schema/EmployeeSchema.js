@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 const { randomUUID } = require('crypto');
+const { employeeOfficeOptions, employeeSituationOptions } = require('../utils/Enums');
 
 const employeeSchema = new mongoose.Schema({
   _id: {
@@ -23,7 +24,7 @@ const employeeSchema = new mongoose.Schema({
   office: {
     type: String,
     require: true,
-    enum: ['gerente', 'vendedor', 'caixa']
+    enum: employeeOfficeOptions
   },
 
   birthday: {
@@ -34,6 +35,7 @@ const employeeSchema = new mongoose.Schema({
   situation: {
     type: String,
     required: true,
+    enum: employeeSituationOptions,
     default: 'activate'
   },
 
