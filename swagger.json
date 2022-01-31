@@ -14,9 +14,7 @@
   "paths": {
     "/employees": {
       "post": {
-        "tags": [
-          "employee"
-        ],
+        "tags": ["employee"],
         "summary": "Create employee",
         "operationId": "Createemployee",
         "parameters": [],
@@ -46,9 +44,7 @@
         "deprecated": false
       },
       "get": {
-        "tags": [
-          "employee"
-        ],
+        "tags": ["employee"],
         "summary": "Find employee",
         "operationId": "Findemployee",
         "parameters": [],
@@ -60,58 +56,54 @@
         },
         "deprecated": false
       },
-      "put": {
-        "tags": [
-          "employee"
-        ],
-        "summary": "Update employee",
-        "operationId": "Updateemployee",
-        "parameters": [],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateemployeeRequest"
-              },
-              "example": {
-                "name": "Ronaldo Nazário",
-                "office": "caixa",
-                "situation": "deactivate"
+      "/{employee_id}": {
+        "put": {
+          "tags": ["employee"],
+          "summary": "Update employee",
+          "operationId": "Updateemployee",
+          "parameters": [],
+          "requestBody": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateemployeeRequest"
+                },
+                "example": {
+                  "name": "Ronaldo Nazário",
+                  "office": "caixa",
+                  "situation": "deactivate"
+                }
               }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
             }
           },
-          "required": true
+          "deprecated": false
         },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {}
-          }
-        },
-        "deprecated": false
-      },
-      "delete": {
-        "tags": [
-          "employee"
-        ],
-        "summary": "Delete employee",
-        "operationId": "Deleteemployee",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {}
-          }
-        },
-        "deprecated": false
+        "delete": {
+          "tags": ["employee"],
+          "summary": "Delete employee",
+          "operationId": "Deleteemployee",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false
+        }
       }
     },
     "/products": {
       "post": {
-        "tags": [
-          "product"
-        ],
+        "tags": ["product"],
         "summary": "Create product",
         "operationId": "Createproduct",
         "parameters": [],
@@ -141,9 +133,7 @@
         "deprecated": false
       },
       "get": {
-        "tags": [
-          "product"
-        ],
+        "tags": ["product"],
         "summary": "Find product",
         "operationId": "Findproduct",
         "parameters": [],
@@ -161,12 +151,7 @@
     "schemas": {
       "CreateemployeeRequest": {
         "title": "CreateemployeeRequest",
-        "required": [
-          "name",
-          "cpf",
-          "office",
-          "birthday"
-        ],
+        "required": ["name", "cpf", "office", "birthday"],
         "type": "object",
         "properties": {
           "name": {
@@ -191,11 +176,7 @@
       },
       "UpdateemployeeRequest": {
         "title": "UpdateemployeeRequest",
-        "required": [
-          "name",
-          "office",
-          "situation"
-        ],
+        "required": ["name", "office", "situation"],
         "type": "object",
         "properties": {
           "name": {
@@ -216,12 +197,7 @@
       },
       "CreateproductRequest": {
         "title": "CreateproductRequest",
-        "required": [
-          "name",
-          "category",
-          "price",
-          "employee_id"
-        ],
+        "required": ["name", "category", "price", "employee_id"],
         "type": "object",
         "properties": {
           "name": {
