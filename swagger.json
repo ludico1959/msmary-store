@@ -2,13 +2,24 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Ms. Mary Store",
-    "contact": {},
-    "version": "1.0"
+    "description": "This API RESTful includes the four basic CRUD operations and it is about store, its products and employees.",
+    "version": "1.0",
+    "contact": {
+      "email": "ludico959@gmail.com"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "externalDocs": {
+    "description": "Github Repository",
+    "url": "https://github.com/ludico1959/msmary-store"
   },
   "servers": [
     {
       "url": "http://localhost:3000/api/v1",
-      "variables": {}
+      "description": "Local server"
     }
   ],
   "paths": {
