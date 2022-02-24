@@ -1,4 +1,4 @@
-# MR. MARY STORE 🏪🛒👩‍🦳
+# MS. MARY STORE 🏪🛒👩‍🦳
 
 This API RESTful includes the four basic CRUD operations and it is about store, its products and employees.
 
